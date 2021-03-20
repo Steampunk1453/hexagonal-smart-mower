@@ -21,6 +21,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("com.ninja-squad:springmockk:3.0.1")
+	testImplementation ("io.mockk:mockk:1.11.0")
 }
 
 tasks.withType<KotlinCompile> {
