@@ -1,1 +1,1 @@
-rootProject.name = "mower"
+rootProject.name = "smart-mower"
