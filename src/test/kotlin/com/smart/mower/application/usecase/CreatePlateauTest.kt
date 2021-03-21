@@ -29,11 +29,12 @@ internal class CreatePlateauTest {
     fun `should create a new plateau and return it`() {
         val source = "5 5,1 2 N,LMLMLMLMM,3 3 E,MMRMMRMRRM"
         val instructions = source.split(DELIMITER)
+        val grid = instructions[0]
         val width = 5
         val height = 5
         every { service.validateGrid(any()) } just Runs
 
-        val result = useCase.invoke(instructions)
+        val result = useCase.invoke(grid)
 
         assertThat(result, `is`(not(nullValue())))
         assertThat(result.plateauId, `is`(not(nullValue())))

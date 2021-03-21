@@ -9,16 +9,15 @@ private const val DELIMITER = " "
 
 class CreatePlateau(private val validator: InstructionValidatorService) {
 
-    operator fun invoke(instructions: List<String>): Plateau {
+    operator fun invoke(grid: String): Plateau {
         val plateauId = PlateauId(UUID.randomUUID())
-        val (width, height) = getGridSize(instructions)
+        val (width, height) = getGridSize(grid)
         return Plateau(plateauId, width, height)
     }
 
-    private fun getGridSize(instructions: List<String>): Pair<Int, Int> {
-        val gridValues = instructions[0]
+    private fun getGridSize(gridValues: String): Pair<Int, Int> {
         validator.validateGrid(gridValues)
-        val grid = instructions[0].split(DELIMITER)
+        val grid = gridValues.split(DELIMITER)
         val width = grid[0].toInt()
         val height = grid[1].toInt()
         return Pair(width, height)
