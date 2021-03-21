@@ -3,11 +3,13 @@ package com.smart.mower.application.usecase
 import com.smart.mower.application.service.InstructionValidatorService
 import com.smart.mower.domain.mower.Command
 import com.smart.mower.domain.mower.Mower
+import com.smart.mower.domain.mower.MowerException
 import com.smart.mower.domain.mower.Orientation
 import com.smart.mower.domain.mower.Position
 import com.smart.mower.domain.plateau.PlateauSize
 
 private const val DELIMITER = " "
+private const val ORIENTATION_POSITION = 2
 
 class CreateMower(private val validator: InstructionValidatorService) {
 
@@ -27,7 +29,7 @@ class CreateMower(private val validator: InstructionValidatorService) {
 
         val positions = coordinates.split(DELIMITER)
         val position = Position(positions[0].toInt(), positions[1].toInt())
-        val orientation = orientations.getOrDefault(positions[2], Orientation.NORTH)
+        val orientation = orientations.getOrElse(positions[ORIENTATION_POSITION], { throw MowerException(("Not found orientation")) })
         val commands = getCommands(commandValues)
 
         return Mower(position, orientation, commands, plateauSize)

@@ -23,7 +23,7 @@ internal class InstructionValidatorServiceTest {
     fun `should throw IllegalStateException for grid values with invalid format`() {
         val grid = "5 A 5"
 
-        assertThrows<IllegalStateException> {validator.validateGrid(grid) }
+        assertThrows<IllegalStateException> { validator.validateGrid(grid) }
     }
 
     @Test
@@ -38,7 +38,7 @@ internal class InstructionValidatorServiceTest {
     fun `should throw IllegalStateException for position values with invalid compass point`() {
         val position = "1 2 T"
 
-        assertThrows<IllegalStateException> {validator.validatePosition(position) }
+        assertThrows<IllegalStateException> { validator.validatePosition(position) }
     }
 
     @Test
@@ -52,7 +52,7 @@ internal class InstructionValidatorServiceTest {
     fun `should throw IllegalStateException for invalid command values`() {
         val commands = "LMLMLMLTT"
 
-        assertThrows<IllegalStateException> {validator.validateCommands(commands) }
+        assertThrows<IllegalStateException> { validator.validateCommands(commands) }
     }
 
 }
