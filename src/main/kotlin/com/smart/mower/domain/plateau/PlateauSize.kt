@@ -7,5 +7,4 @@ class PlateauSize(val width: Int, val height: Int) {
         if (height < 0) throw PlateauException("Height should be positive")
     }
 
-
 }
