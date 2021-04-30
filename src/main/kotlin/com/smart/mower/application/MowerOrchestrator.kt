@@ -19,12 +19,12 @@ class MowerOrchestrator(private val createPlateau: CreatePlateau,
 
     fun handleInstructions(instructions: String): Plateau {
         val instructionList = instructions.split(DELIMITER)
-        val to = instructionList.size.minus(1).div(2)
+        val mowersNumber = instructionList.size.minus(1).div(2)
         val grid = instructionList[GRID_POSITION]
         val plateau = createPlateau(grid)
         val plateauSize = PlateauSize(plateau.width, plateau.height)
 
-        for (i in 0 until to) {
+        for (i in 0 until mowersNumber) {
             val coordinatesPosition = 2 * i + 1
             val commandsPosition = 2 * i + 2
             val mower = createMower(instructionList[coordinatesPosition], instructionList[commandsPosition], plateauSize)

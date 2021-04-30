@@ -14,7 +14,7 @@ private const val ORIENTATION_POSITION = 2
 class CreateMower(private val validator: InstructionValidatorService) {
 
     private val orientations: Map<String, Orientation> =
-        mapOf("N" to Orientation.NORTH, "S" to Orientation.SOUTH, "E" to Orientation.EAST, "W" to Orientation.WEST)
+        mapOf("N" to Orientation.NORTH, "E" to Orientation.EAST, "S" to Orientation.SOUTH, "W" to Orientation.WEST)
 
     private val commands: Map<Char, Command> =
         mapOf('L' to Command.LEFT, 'R' to Command.RIGHT, 'M' to Command.FORWARD)
