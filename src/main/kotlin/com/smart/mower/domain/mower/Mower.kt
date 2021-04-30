@@ -20,9 +20,6 @@ class Mower(val position: Position, var orientation: Orientation, val commands: 
     }
 
     private fun move() {
-        if (commands.isEmpty()) {
-            return
-        }
         when (val command = commands[0]) {
             Command.FORWARD -> advance()
             Command.RIGHT,
@@ -37,7 +34,7 @@ class Mower(val position: Position, var orientation: Orientation, val commands: 
                 position.y = position.y + Movement.FORWARD.step
             }
             Orientation.EAST -> if (position.x < plateauSize.width) {
-                position.x = position.x + 1
+                position.x = position.x + Movement.FORWARD.step
             }
             Orientation.SOUTH -> if (position.y > 0) {
                 position.y = position.y - 1
