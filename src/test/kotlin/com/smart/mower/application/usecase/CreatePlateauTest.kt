@@ -37,7 +37,7 @@ internal class CreatePlateauTest {
         val result = useCase.invoke(grid)
 
         assertThat(result, `is`(not(nullValue())))
-        assertThat(result.plateauId, `is`(not(nullValue())))
+        assertThat(result.id, `is`(not(nullValue())))
         assertThat(result.width, `is`(width))
         assertThat(result.height, `is`(height))
     }

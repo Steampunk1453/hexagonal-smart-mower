@@ -2,7 +2,7 @@ package com.smart.mower.domain.plateau
 
 import com.smart.mower.domain.mower.Mower
 
-class Plateau(val plateauId: PlateauId, val width: Int, val height: Int) {
+class Plateau(val id: PlateauId, val width: Int, val height: Int) {
     internal val mowers = mutableListOf<Mower>()
 
     init {

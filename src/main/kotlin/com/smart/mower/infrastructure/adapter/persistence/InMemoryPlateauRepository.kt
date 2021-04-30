@@ -11,7 +11,7 @@ class InMemoryPlateauRepository : PlateauRepository {
     private val plateaus: MutableMap<UUID, Plateau> = mutableMapOf()
 
     override fun save(plateau: Plateau) {
-        plateaus[plateau.plateauId.id] = plateau
+        plateaus[plateau.id.value] = plateau
     }
 
     override fun findById(id: UUID): Plateau? {

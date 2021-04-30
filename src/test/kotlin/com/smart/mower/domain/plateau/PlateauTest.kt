@@ -22,7 +22,7 @@ internal class PlateauTest {
         val result = Plateau(plateauId, width, height)
 
         assertThat(result, `is`(not(nullValue())))
-        assertThat(result.plateauId, `is`(not(nullValue())))
+        assertThat(result.id, `is`(not(nullValue())))
         assertThat(result.width, `is`(width))
         assertThat(result.height, `is`(height))
     }
