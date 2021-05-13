@@ -56,7 +56,7 @@ internal class MowerOrchestratorTest {
         val result = orchestrator.handleInstructions(instructions)
 
         assertThat(result, `is`(not(nullValue())))
-        assertThat(result.plateauId, `is`(not(nullValue())))
+        assertThat(result.id, `is`(not(nullValue())))
         assertThat(result.width, `is`(plateau.width))
         assertThat(result.height, `is`(plateau.height))
         assertThat(result.mowers.size, `is`(not(0)))
@@ -72,7 +72,7 @@ internal class MowerOrchestratorTest {
     fun `should execute instructions and return list with mowers`() {
         val plateau = buildPlateau()
         val mower = buildMower()
-        val plateauId = plateau.plateauId.id
+        val plateauId = plateau.id.value
         plateau.addMower(mower)
 
         every { plateauRepository.findById(any()) } returns plateau

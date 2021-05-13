@@ -15,7 +15,7 @@ class SendMowerInstructionsController(private val mowerOrchestrator: MowerOrches
   @PostMapping("mowers/send")
   fun send(@RequestBody instructionsRequest: InstructionsRequest): ResponseEntity<UUID> {
     val plateau = mowerOrchestrator.handleInstructions(instructionsRequest.instructions)
-    return ResponseEntity(plateau.plateauId.id, HttpStatus.CREATED)
+    return ResponseEntity(plateau.id.value, HttpStatus.CREATED)
   }
 
 }
