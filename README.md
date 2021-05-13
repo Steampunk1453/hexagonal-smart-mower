@@ -61,5 +61,4 @@ It implements a Domain / Hexagonal (Ports and Adapters) approach with Kotlin and
 ### TODO
 * Add logs
 * Add ControllerAdvice to handle exceptions in one point
-* Add more integration tests
 * Allow to send files in CSV format
